@@ -60,7 +60,124 @@ Müşteri iletişim bilgileri ve müşteri türünün (Toptan/Perakende) yöneti
 İşletmenin kar/zarar durumunu, cirosunu ve kritik stoktaki ürünleri grafiksel ve listeler halinde sunan analiz ekranı.
 
 ---
+### Veritabanı İlişkileri (ER Diyagramı)
+```mermaid
+erDiagram
+    MUSTERI ||--o{ SATIS : "Siparis Verir"
+    KULLANICI ||--o{ SATIS : "Islemi Yapar"
+    SATIS ||--|{ SATIS_DETAY : "Icerir"
+    URUN ||--o{ SATIS_DETAY : "Listelenir"
 
+    MUSTERI {
+        int Id PK
+        string Name
+        string Iletisim
+        string Adres
+        string Type
+    }
+    URUN {
+        int Id PK
+        string Name
+        int StokAdet
+        decimal SatisFiyat
+        decimal Maliyet
+        int MinStokUyari
+    }
+    KULLANICI {
+        int Id PK
+        string UserName
+        string Password
+        string Role
+    }
+    SATIS {
+        int Id PK
+        int MusteriId FK
+        int PersonelId FK
+        DateTime SatisTarih
+        decimal ToplamTutar
+    }
+    SATIS_DETAY {
+        int SatisId FK
+        int UrunId FK
+        int Adet
+        decimal Fiyat
+    }
+ ```
+
+
+### 2. Class (Sınıf) Diyagramı Kodu
+
+Bu kod, Entity katmanındaki sınıflarını ve birbirlerine olan bağlantılarını gösterir.
+
+
+### Sınıf (Class) Diyagramı
+```mermaid
+classDiagram
+    class Urun {
+        +int Id
+        +string Name
+        +int StokAdet
+        +decimal SatisFiyat
+        +decimal Maliyet
+        +int MinStokUyari
+        +string UrunAciklama
+    }
+    class Musteri {
+        +int Id
+        +string Name
+        +string Iletisim
+        +string Adres
+        +string Type
+    }
+    class Satis {
+        +int Id
+        +int MusteriId
+        +int PersonelId
+        +DateTime SatisTarih
+        +decimal ToplamTutar
+    }
+    class SatisDetay {
+        +int SatisId
+        +int UrunId
+        +int Adet
+        +decimal Fiyat
+    }
+    class Kullanici {
+        +int Id
+        +string UserName
+        +string Password
+        +string Role
+    }
+
+    Satis ..> Musteri : Kullanır
+    Satis ..> Kullanici : Kullanır
+    SatisDetay ..> Satis : Bağlıdır
+    SatisDetay ..> Urun : İçerir
+
+
+```
+
+### 3. Use-Case (Akış) Diyagramı Kodu
+
+### Kullanım Senaryosu (Use-Case)
+```mermaid
+graph TD
+    User((Personel))
+    
+    subgraph "Stok Takip Sistemi"
+        Login(Giriş Yap)
+        UrunYonet(Ürün Ekle/Sil/Güncelle)
+        MusteriYonet(Müşteri Yönetimi)
+        SatisYap(Satış & Sepet İşlemleri)
+        RaporAl(Finansal Raporlar)
+    end
+
+    User --> Login
+    Login --> UrunYonet
+    Login --> MusteriYonet
+    Login --> SatisYap
+    Login --> RaporAl
+```
 ## 🚀 Kurulum ve Kullanım
 
 1. Projeyi bilgisayarınıza indirin (Clone veya Zip).
