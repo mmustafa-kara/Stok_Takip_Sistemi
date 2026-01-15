@@ -8,14 +8,12 @@ namespace StokTakip.DAL
 {
     public class RaporDAL
     {
-        // 1. Kritik Stok Listesi (Stok <= MinStokUyari olanlar)
+        // 1. Kritik Stok Listesi
         public DataTable KritikStokGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-
-                // Stok adedi, uyarı limitinden az veya eşit olanları getir
                 string query = "SELECT name AS 'Ürün Adı', stokAdet AS 'Kalan Stok', minStokUyari AS 'Kritik Eşik' " +
                                "FROM urunler WHERE stokAdet <= minStokUyari";
 
@@ -28,14 +26,12 @@ namespace StokTakip.DAL
             }
         }
 
-        // 2. Toplam Ciro (Kasaya giren toplam para)
+        // 2. Toplam Ciro
         public decimal ToplamCiroGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-
-                // Satışlar tablosundaki toplamTutar sütununu topla
                 string query = "SELECT SUM(toplamTutar) FROM satislar";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -48,15 +44,12 @@ namespace StokTakip.DAL
             }
         }
 
-        // 3. Toplam Kâr (Satış Fiyatı - Maliyet) * Adet
+        // 3. Toplam Kâr
         public decimal ToplamKarGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-
-                // Detay tablosu ile ürünler tablosunu birleştirip kârı hesaplıyoruz
-                // Formül: (SatılanFiyat - ÜrününMaliyeti) * SatılanAdet
                 string query = @"SELECT SUM((sd.fiyat - u.maliyet) * sd.adet) 
                                  FROM satisDetay sd 
                                  JOIN urunler u ON sd.urunId = u.id";
@@ -76,8 +69,6 @@ namespace StokTakip.DAL
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-
-                // Ürün tablosu ile detay tablosunu birleştirip, isme göre grupluyoruz
                 string query = @"SELECT u.name AS 'Ürün Adı', SUM(sd.adet) AS 'Toplam Satış Adedi' 
                          FROM satisDetay sd 
                          JOIN urunler u ON sd.urunId = u.id 
@@ -94,14 +85,12 @@ namespace StokTakip.DAL
             }
         }
 
-        // 5. Aylık Satış Raporu
         public DataTable AylikSatisGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
 
-                // Tarihi Ay-Yıl formatına çevirip (Örn: 2025-01) grupluyoruz
                 string query = @"SELECT DATE_FORMAT(satisTarih, '%Y-%m') AS 'Dönem', 
                                 COUNT(*) AS 'İşlem Sayısı', 
                                 SUM(toplamTutar) AS 'Toplam Ciro' 
@@ -118,15 +107,11 @@ namespace StokTakip.DAL
             }
         }
 
-        // 6. Müşteri Bazlı Satış Raporu
         public DataTable MusteriCiroGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-
-                // Müşteriler (musteriler) tablosu ile satışları birleştiriyoruz
-                // NOT: Veritabanında müşteri tablosunun adı 'musteriler' kabul edilmiştir.
                 string query = @"SELECT m.name AS 'Müşteri', 
                                 SUM(s.toplamTutar) AS 'Toplam Alışveriş' 
                          FROM satislar s 

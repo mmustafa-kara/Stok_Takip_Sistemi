@@ -16,7 +16,7 @@ namespace StokTakip.DAL
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
 
-                // SQL Injection'ı önlemek için parametreli sorgu kullanıyoruz
+                // SQL Injection'ı önlemek için parametreli sorgu
                 string query = "SELECT * FROM kullanicilar WHERE userName=@user AND password=@pass";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))

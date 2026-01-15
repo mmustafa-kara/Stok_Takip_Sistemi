@@ -17,7 +17,7 @@ namespace StokTakip.Entities
         // Veritabanındaki "fullname" sütunu
         public string Fullname { get; set; }
 
-        // Polymorphism: Kullanıcı bilgisi istendiğinde Adı ve Rolü dönsün
+        // Kullanıcı bilgisi istendiğinde Adı ve Rolü dönsün
         public override string BilgiGetir()
         {
             return $"{Fullname} ({Role})";

@@ -8,7 +8,7 @@ namespace StokTakip.DAL
 {
     public class UrunDAL
     {
-        // 1. Tüm Ürünleri Listeleme Metodu
+        // 1. Tüm Ürünleri Listeleme
         public List<Urun> TumUrunleriGetir()
         {
             List<Urun> urunler = new List<Urun>();
@@ -42,7 +42,7 @@ namespace StokTakip.DAL
             return urunler;
         }
 
-        // 2. Yeni Ürün Ekleme Metodu
+        // 2. Yeni Ürün Ekleme
         public int UrunEkle(Urun u)
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -61,12 +61,12 @@ namespace StokTakip.DAL
                     cmd.Parameters.AddWithValue("@min", u.MinStokUyari);
                     cmd.Parameters.AddWithValue("@aciklama", u.UrunAciklama);
 
-                    return cmd.ExecuteNonQuery(); // Etkilenen satır sayısını döndürür
+                    return cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        // 3. Ürün Güncelleme Metodu
+        // 3. Ürün Güncelleme
         public int UrunGuncelle(Urun u)
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -91,7 +91,7 @@ namespace StokTakip.DAL
             }
         }
 
-        // 4. Ürün Silme Metodu
+        // 4. Ürün Silme
         public int UrunSil(int id)
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -110,7 +110,7 @@ namespace StokTakip.DAL
         
 
 
-        // Stok kontrolü için stok adedini çeken metot
+        // Stok kontrolü için stok adedini çekme
         public int StokAdediGetir(int urunId)
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -126,7 +126,7 @@ namespace StokTakip.DAL
             }
         }
 
-        // Hata mesajında ürünün adını göstermek için ismini çeken metot
+        // Hata mesajında ürünün adını göstermek için ismini çekme
         public string UrunAdiGetir(int urunId)
         {
             using (MySqlConnection conn = Baglanti.GetConnection())

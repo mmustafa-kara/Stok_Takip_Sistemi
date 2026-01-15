@@ -21,7 +21,6 @@ namespace StokTakip.UI
                 string kAdi = txtUserName.Text.Trim();
                 string sifre = txtPassword.Text.Trim();
 
-                // BLL katmanına soruyoruz
                 Kullanici user = kManager.GirisYap(kAdi, sifre);
 
                 if (user != null)
@@ -30,7 +29,6 @@ namespace StokTakip.UI
                     anaMenu.Show();
                     this.Hide();
 
-                    // EKLE: Ana menü kapandığında tüm uygulamayı kapatmak için:
                     anaMenu.FormClosed += (s, args) => Application.Exit();
                 }
                 else

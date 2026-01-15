@@ -9,13 +9,13 @@
         // Telefon Numarası
         public string Iletisim { get; set; }
 
-        // Müşteri Türü: "Perakende" (Ev) veya "Toptan" (Otel/Bayi)
+        // Müşteri Türü: "Perakende" veya "Toptan" 
         public string Type { get; set; }
 
-        // Teslimat Adresi (Mobilya için kritik)
+        // Teslimat Adresi 
         public string Adres { get; set; }
 
-        // Polymorphism: Müşteri bilgisi istendiğinde Adı ve Türü dönsün
+        // Müşteri bilgisi istendiğinde Adı ve Türü dönsün
         public override string BilgiGetir()
         {
             return $"{Name} - {Type} Müşterisi";

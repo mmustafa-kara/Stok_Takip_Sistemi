@@ -22,7 +22,6 @@ namespace StokTakip.BLL
             return rDal.ToplamKarGetir();
         }
 
-        // DAL katmanındaki yeni rapor metodlarını çağırıyoruz
         public DataTable EnCokSatanlariGetir()
         {
             return rDal.EnCokSatanlariGetir();

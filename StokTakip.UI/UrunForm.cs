@@ -12,21 +12,16 @@ namespace StokTakip.UI
             InitializeComponent();
         }
 
-        // BLL Katmanımızı çağırıyoruz
         UrunManager uManager = new UrunManager();
 
         private void UrunForm_Load(object sender, EventArgs e)
         {
         }
 
-        // Tekrar tekrar kullanacağımız listeleme metodu
         void Listele()
         {
-            // DataGridView'in veri kaynağını veritabanından gelen liste yapıyoruz
             dgvUrunler.DataSource = uManager.TumUrunleriGetir();
 
-            // ID sütununu gizleyebilirsin (İsteğe bağlı)
-            // dgvUrunler.Columns["Id"].Visible = false;
         }
 
         void Temizle()
@@ -37,7 +32,7 @@ namespace StokTakip.UI
             numFiyat.Value = 0;
             numMaliyet.Value = 0;
             numMinStok.Value = 0;
-            lblId.Text = "0"; // ID sıfırlanır
+            lblId.Text = "0";
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -51,8 +46,6 @@ namespace StokTakip.UI
                 yeniUrun.Maliyet = numMaliyet.Value;
                 yeniUrun.MinStokUyari = Convert.ToInt32(numMinStok.Value);
                 yeniUrun.UrunAciklama = txtAciklama.Text;
-
-                // BLL katmanına gönder
                 uManager.UrunEkle(yeniUrun);
 
                 MessageBox.Show("Ürün başarıyla eklendi.");
@@ -69,7 +62,6 @@ namespace StokTakip.UI
         {
             try
             {
-                // lblId içindeki değeri okuyoruz
                 int id = Convert.ToInt32(lblId.Text);
 
                 if (id > 0)
@@ -103,7 +95,7 @@ namespace StokTakip.UI
                 if (id > 0)
                 {
                     Urun guncellenecekUrun = new Urun();
-                    guncellenecekUrun.Id = id; // Hangi ürünü güncellediğimiz önemli
+                    guncellenecekUrun.Id = id;
                     guncellenecekUrun.Name = txtAd.Text;
                     guncellenecekUrun.StokAdet = Convert.ToInt32(numStok.Value);
                     guncellenecekUrun.SatisFiyat = numFiyat.Value;
@@ -130,10 +122,10 @@ namespace StokTakip.UI
 
         private void dgvUrunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Listeden bir satıra tıklandığında bilgileri kutucuklara doldur
+
             try
             {
-                // Başlık satırına tıklanırsa hata vermesin
+
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = dgvUrunler.Rows[e.RowIndex];

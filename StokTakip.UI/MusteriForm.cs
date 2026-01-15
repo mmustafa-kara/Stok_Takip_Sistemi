@@ -19,7 +19,6 @@ namespace StokTakip.UI
         void Listele()
         {
             dgvMusteriler.DataSource = mManager.TumMusterileriGetir();
-            // dgvMusteriler.Columns["Id"].Visible = false;
         }
 
         void Temizle()
@@ -39,7 +38,7 @@ namespace StokTakip.UI
                 m.Name = txtAd.Text;
                 m.Iletisim = txtIletisim.Text;
                 m.Adres = txtAdres.Text;
-                m.Type = cmbTur.SelectedItem.ToString(); // ComboBox'tan seçileni al
+                m.Type = cmbTur.SelectedItem.ToString(); 
 
                 mManager.MusteriEkle(m);
                 MessageBox.Show("Müşteri sisteme kaydedildi.");
@@ -57,22 +56,19 @@ namespace StokTakip.UI
             // Hata yönetimi için try-catch
             try
             {
-                // 1. Kullanıcı bir satır seçmiş mi kontrol et
                 if (dgvMusteriler.CurrentRow != null)
                 {
-                    // 2. Seçili satırdan ID değerini al (Hücre isminin 'Id' olduğundan emin ol)
                     int id = Convert.ToInt32(dgvMusteriler.CurrentRow.Cells["Id"].Value);
 
-                    // 3. Kullanıcıya son bir kez sor
                     DialogResult onay = MessageBox.Show("Bu müşteriyi silmek istediğinize emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (onay == DialogResult.Yes)
                     {
-                        mManager.MusteriSil(id); // BLL katmanına gönder
+                        mManager.MusteriSil(id);
                         MessageBox.Show("Müşteri başarıyla silindi.");
 
-                        Listele(); // Listeyi yenile
-                        Temizle(); // Alanları temizle
+                        Listele(); 
+                        Temizle(); 
                     }
                 }
                 else
@@ -86,7 +82,7 @@ namespace StokTakip.UI
             }
         }
 
-        // Güncelle butonu için de benzer mantığı kurabilirsin.
+
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             try
@@ -115,19 +111,18 @@ namespace StokTakip.UI
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
-            Temizle(); // Zaten yazdığımız temizleme metodunu çağırır
+            Temizle();
         }
 
         private void dgvMusteriler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Başlık satırına (Header) tıklanırsa işlem yapma
             if (e.RowIndex < 0) return;
 
             try
             {
                 DataGridViewRow row = dgvMusteriler.Rows[e.RowIndex];
 
-                // Null kontrolü yaparak değerleri al (Hata riskini azaltır)
+                // Null kontrolü yaparak değerleri al
                 lblId.Text = row.Cells["Id"].Value?.ToString();
                 txtAd.Text = row.Cells["Name"].Value?.ToString();
                 txtIletisim.Text = row.Cells["Iletisim"].Value?.ToString();
@@ -149,7 +144,6 @@ namespace StokTakip.UI
         private void MusteriForm_Load_1(object sender, EventArgs e)
         {
             Listele();
-            // Varsayılan olarak Perakende seçili gelsin
             cmbTur.SelectedIndex = 0;
 
         }

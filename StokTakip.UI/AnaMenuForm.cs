@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing; // Renk ve Konum işlemleri için
+using System.Drawing;
 using System.Windows.Forms;
 using StokTakip.Entities;
 
@@ -16,7 +16,6 @@ namespace StokTakip.UI
             _girisYapanKullanici = k;
         }
 
-        // --- SOL MENÜ İŞLEMLERİ ---
         private void FormGetir(Form frm)
         {
             foreach (Form f in this.MdiChildren)
@@ -30,7 +29,6 @@ namespace StokTakip.UI
             frm.Show();
         }
 
-        // --- YETKİLENDİRME ---
         private void RoleGoreMenuAyarla()
         {
             string rol = _girisYapanKullanici.Role;
@@ -56,17 +54,13 @@ namespace StokTakip.UI
             }
         }
 
-        // --- KULLANICI BİLGİSİ (LABEL) ---
         private void KullaniciBilgisiGoster()
         {
             Label lblBilgi = new Label();
             lblBilgi.Text = $"{_girisYapanKullanici.Fullname}\n[{_girisYapanKullanici.Role.ToUpper()}]";
 
-            // --- GÜNCELLEME 1: RENK DEĞİŞİMİ ---
-            // Eski Kod: lblBilgi.ForeColor = Color.DarkBlue;
-            // Yeni Kod: Daha uyumlu, ciddi bir gri tonu veya siyah.
             lblBilgi.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            lblBilgi.ForeColor = Color.DarkSlateGray; // İstersen Color.Black de yapabilirsin.
+            lblBilgi.ForeColor = Color.DarkSlateGray; 
 
             lblBilgi.TextAlign = ContentAlignment.MiddleRight;
             lblBilgi.AutoSize = true;
@@ -79,7 +73,6 @@ namespace StokTakip.UI
             lblBilgi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         }
 
-        // --- BUTON TIKLAMA OLAYLARI ---
 
         public void btnMusteriler_Click(object sender, EventArgs e)
         {
@@ -105,13 +98,9 @@ namespace StokTakip.UI
             FormGetir(frm);
         }
 
-        // --- GÜNCELLEME 2: ÇIKIŞ BUTONU DAVRANIŞI ---
+
         public void btnCikis_Click(object sender, EventArgs e)
         {
-            // Eski Kod: Application.Exit(); // Komple kapatıyordu.
-
-            // Yeni Kod: Uygulamayı yeniden başlatır. 
-            // Program.cs'deki Main metodu tekrar çalışacağı için LoginForm açılır.
             Application.Restart();
         }
 

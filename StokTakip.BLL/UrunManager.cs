@@ -16,15 +16,12 @@ namespace StokTakip.BLL
 
         public void UrunEkle(Urun u)
         {
-            // İş Kuralı: Ürün adı boş olamaz
             if (string.IsNullOrEmpty(u.Name))
                 throw new Exception("Ürün adı boş bırakılamaz!");
 
-            // İş Kuralı: Fiyat veya stok negatif olamaz
             if (u.StokAdet <= 0)
                 throw new Exception("Stok 0 veya daha küçük olamaz!");
 
-            // İş kuralı örneği: Fiyat 0 olamaz
             if (u.SatisFiyat <= 0)
                 throw new Exception("Satış fiyatı 0 veya daha küçük olamaz!");
 
@@ -47,7 +44,6 @@ namespace StokTakip.BLL
             uDal.UrunSil(id);
         }
 
-        // Mevcut kodların altına ekle
         public int StokOgren(int id)
         {
             return uDal.StokAdediGetir(id);

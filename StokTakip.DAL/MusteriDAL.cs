@@ -68,8 +68,6 @@ namespace StokTakip.DAL
                 }
             }
         }
-
-        // Güncelleme metodu da benzer mantıkla eklenebilir.
         public int MusteriGuncelle(Musteri m)
         {
             using (MySqlConnection conn = Baglanti.GetConnection())

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq; // Toplam hesaplamak için gerekli
+using System.Linq; 
 using System.Windows.Forms;
 using StokTakip.BLL;
 using StokTakip.Entities;
@@ -9,7 +9,6 @@ namespace StokTakip.UI
 {
     public partial class SatisForm : Form
     {
-        // Satışı yapan personeli Ana Menüden alacağız
         Kullanici _personel;
 
         public SatisForm(Kullanici personel)
@@ -18,12 +17,10 @@ namespace StokTakip.UI
             _personel = personel;
         }
 
-        // Manager sınıflarımız
         UrunManager uManager = new UrunManager();
         MusteriManager mManager = new MusteriManager();
         SatisManager sManager = new SatisManager();
 
-        // Sepetimiz (Geçici liste)
         List<SepetItem> sepet = new List<SepetItem>();
 
         private void SatisForm_Load(object sender, EventArgs e)
@@ -35,12 +32,9 @@ namespace StokTakip.UI
 
         void VerileriYukle()
         {
-            // 1. Müşterileri ComboBox'a doldur
             cmbMusteri.DataSource = mManager.TumMusterileriGetir();
-            cmbMusteri.DisplayMember = "Name"; // Ekranda görünen isim
-            cmbMusteri.ValueMember = "Id";     // Arka plandaki ID
-
-            // 2. Ürünleri ComboBox'a doldur
+            cmbMusteri.DisplayMember = "Name"; 
+            cmbMusteri.ValueMember = "Id";  
             cmbUrun.DataSource = uManager.TumUrunleriGetir();
             cmbUrun.DisplayMember = "Name";
             cmbUrun.ValueMember = "Id";
@@ -48,36 +42,30 @@ namespace StokTakip.UI
 
         private void btnSepeteEkle_Click(object sender, EventArgs e)
         {
-            // Seçilen ürünü al (ComboBox'tan bütün nesne olarak alıyoruz)
             Urun secilenUrun = (Urun)cmbUrun.SelectedItem;
             int adet = Convert.ToInt32(numAdet.Value);
 
 
-            // Sepete ekle
             SepetItem item = new SepetItem
             {
                 UrunId = secilenUrun.Id,
                 UrunAdi = secilenUrun.Name,
                 Adet = adet,
-                BirimFiyat = secilenUrun.SatisFiyat,
-                // ToplamTutar özelliği sınıfın içinde otomatik hesaplanıyor
+                BirimFiyat = secilenUrun.SatisFiyat, 
             };
 
             sepet.Add(item);
 
-            // Listeyi yenile
             SepetGuncelle();
         }
 
         void SepetGuncelle()
         {
-            // Grid'i sıfırla ve yeniden bağla
             dgvSepet.DataSource = null;
             dgvSepet.DataSource = sepet;
 
-            // Genel Toplamı Hesapla
             decimal genelToplam = sepet.Sum(x => x.ToplamTutar);
-            lblGenelToplam.Text = genelToplam.ToString("C2"); // Para birimi formatı
+            lblGenelToplam.Text = genelToplam.ToString("C2"); 
         }
 
         private void btnSatisYap_Click(object sender, EventArgs e)
@@ -90,14 +78,12 @@ namespace StokTakip.UI
                     return;
                 }
 
-                // 1. Satış Başlığı (Satis) oluştur
                 Satis yeniSatis = new Satis();
                 yeniSatis.MusteriId = Convert.ToInt32(cmbMusteri.SelectedValue);
-                yeniSatis.PersonelId = _personel.Id; // Giriş yapan personel
+                yeniSatis.PersonelId = _personel.Id; 
                 yeniSatis.SatisTarih = DateTime.Now;
                 yeniSatis.ToplamTutar = sepet.Sum(x => x.ToplamTutar);
 
-                // 2. Satış Detaylarını (List<SatisDetay>) oluştur
                 List<SatisDetay> detaylar = new List<SatisDetay>();
 
                 foreach (var item in sepet)
@@ -110,15 +96,14 @@ namespace StokTakip.UI
                     });
                 }
 
-                // 3. Manager'a gönder (Transaction orada çalışacak)
                 sManager.SatisYap(yeniSatis, detaylar);
 
                 MessageBox.Show("Satış başarıyla tamamlandı. Stoklar güncellendi.");
 
-                // Formu temizle
+
                 sepet.Clear();
                 SepetGuncelle();
-                VerileriYukle(); // Stoklar değiştiği için ürünleri tekrar çekelim
+                VerileriYukle(); 
             }
             catch (Exception ex)
             {
@@ -133,7 +118,6 @@ namespace StokTakip.UI
         }
     }
 
-    // YARDIMCI SINIF (Sepetteki ürünleri Grid'de göstermek için)
     public class SepetItem
     {
         public int UrunId { get; set; }

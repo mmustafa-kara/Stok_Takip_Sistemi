@@ -10,7 +10,6 @@ namespace StokTakip.BLL
 
         public Kullanici GirisYap(string kAdi, string sifre)
         {
-            // Basit bir boşluk kontrolü (Business Rule örneği)
             if (string.IsNullOrEmpty(kAdi) || string.IsNullOrEmpty(sifre))
             {
                 throw new Exception("Kullanıcı adı veya şifre boş bırakılamaz!");
