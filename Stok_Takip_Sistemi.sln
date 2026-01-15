@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36603.0 d17.14
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11408.102 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokTakip.Entities", "StokTakip.Entities\StokTakip.Entities.csproj", "{6D9A319A-56B4-4167-B03C-A8BB3726326B}"
 EndProject
@@ -10,6 +10,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokTakip.BLL", "StokTakip.BLL\StokTakip.BLL.csproj", "{8F192AD4-33BE-4503-B4F1-BEA2D5F5E005}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokTakip.UI", "StokTakip.UI\StokTakip.UI.csproj", "{76A8359A-4AA7-4D9B-8D1A-BDE9C0C0CDDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{6E22EFC4-A660-4D11-8726-41147AC9AFD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{8E88E55E-3B57-4412-86FA-CCEDE7F491C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ENTİTİES", "ENTİTİES", "{909449AA-7B97-4833-B5AB-8EA52DCEEDCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{C4CE6073-B1F2-4EA7-936E-417AF9D5265E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +44,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D9A319A-56B4-4167-B03C-A8BB3726326B} = {909449AA-7B97-4833-B5AB-8EA52DCEEDCD}
+		{A23AD37C-EB36-4DBA-9A1C-5CE050FDB90C} = {8E88E55E-3B57-4412-86FA-CCEDE7F491C5}
+		{8F192AD4-33BE-4503-B4F1-BEA2D5F5E005} = {6E22EFC4-A660-4D11-8726-41147AC9AFD1}
+		{76A8359A-4AA7-4D9B-8D1A-BDE9C0C0CDDB} = {C4CE6073-B1F2-4EA7-936E-417AF9D5265E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1549227-AC65-41A3-9FA9-1023C9DCB56B}
