@@ -202,6 +202,13 @@ Proje, **Solid Prensipleri** gözetilerek 4 ana katman üzerine inşa edilmişti
 
 Proje ile ilgili sorularınız için:
 
-- **Geliştirici**: [Muhammed Mustafa Kara]
+- **Geliştirici**: Muhammed Mustafa Kara
 - **Bölüm**: Yönetim Bilişim Sistemleri
 - **E-posta**: [mu.mustafakara@gmail.com]
+
+---
+## 🎥 Proje Tanıtım Videosu
+
+Projeyi detaylı incelemek ve nasıl çalıştığını görmek için aşağıdaki videoya tıklayabilirsiniz:
+
+[![Stok Takip Sistemi Video](https://img.youtube.com/vi/ohMVnVpCdMk/0.jpg)](https://www.youtube.com/watch?v=ohMVnVpCdMk)
