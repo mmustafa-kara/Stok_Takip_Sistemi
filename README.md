@@ -30,32 +30,27 @@
 ## 📸 Ekran Görüntüleri
 
 ### Giriş Ekranı
-![Giriş Ekranı](./screenshots/giris.png)
+![Giriş Ekranı](./screenshots/girisSayfa.png)
 
 Kullanıcı adı ve şifre ile sisteme güvenli giriş yapılmasını sağlayan arayüz.
 
-### Ana Menü
-![Ana Menü](./screenshots/anamenu.png)
-
-Tüm modüllere (Ürün, Müşteri, Satış, Raporlar) tek bir noktadan erişim sağlayan dashboard.
-
 ### Ürün Yönetimi
-![Ürün Yönetimi](./screenshots/urunler.png)
+![Ürün Yönetimi](./screenshots/urunSayfa.png)
 
 Stoktaki ürünlerin listelendiği, yeni ürün girişinin yapıldığı ve fiyat/stok güncellemelerinin yönetildiği ekran.
 
 ### Satış İşlemleri
-![Satış İşlemleri](./screenshots/satis.png)
+![Satış İşlemleri](./screenshots/satisSayfa.png)
 
 Müşteri ve ürün seçimi yapılarak sepet oluşturulan ve satışın tamamlandığı ekran. Satış sonrası stoklar otomatik güncellenir.
 
 ### Müşteri Yönetimi
-![Müşteri Yönetimi](./screenshots/musteri.png)
+![Müşteri Yönetimi](./screenshots/musteriSayfa.png)
 
 Müşteri iletişim bilgileri ve müşteri türünün (Toptan/Perakende) yönetildiği ekran.
 
 ### Finansal Raporlar
-![Raporlar](./screenshots/raporlar.png)
+![Raporlar](./screenshots/raporSayfa.png)
 
 İşletmenin kar/zarar durumunu, cirosunu ve kritik stoktaki ürünleri grafiksel ve listeler halinde sunan analiz ekranı.
 
@@ -202,6 +197,13 @@ Proje, **Solid Prensipleri** gözetilerek 4 ana katman üzerine inşa edilmişti
 
 Proje ile ilgili sorularınız için:
 
-- **Geliştirici**: [Muhammed Mustafa Kara]
+- **Geliştirici**: Muhammed Mustafa Kara
 - **Bölüm**: Yönetim Bilişim Sistemleri
 - **E-posta**: [mu.mustafakara@gmail.com]
+
+---
+## 🎥 Proje Tanıtım Videosu
+
+Projeyi detaylı incelemek ve nasıl çalıştığını görmek için aşağıdaki videoya tıklayabilirsiniz:
+
+[![Stok Takip Sistemi Video](https://img.youtube.com/vi/ohMVnVpCdMk/0.jpg)](https://www.youtube.com/watch?v=ohMVnVpCdMk)
