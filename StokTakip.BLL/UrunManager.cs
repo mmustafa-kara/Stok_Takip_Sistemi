@@ -40,7 +40,7 @@ namespace StokTakip.BLL
         {
             if (id <= 0)
                 throw new Exception("Geçersiz ürün ID!");
-
+            uDal.UrununSatislariniTemizle(id);
             uDal.UrunSil(id);
         }
 

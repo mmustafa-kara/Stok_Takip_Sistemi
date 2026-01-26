@@ -7,7 +7,6 @@ namespace StokTakip.DAL
 {
     public class KullaniciDAL
     {
-        // Kullanıcı adı ve şifre kontrolü yapan metot
         public Kullanici GirisKontrol(string kAdi, string sifre)
         {
             Kullanici bulunanKullanici = null;
@@ -15,8 +14,6 @@ namespace StokTakip.DAL
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-
-                // SQL Injection'ı önlemek için parametreli sorgu
                 string query = "SELECT * FROM kullanicilar WHERE userName=@user AND password=@pass";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))

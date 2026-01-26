@@ -22,8 +22,6 @@ namespace StokTakip.BLL
             {
                 int mevcutStok = uManager.StokOgren(item.UrunId);
                 string urunAdi = uManager.IsimOgren(item.UrunId);
-
-                // 2. Yeterli mi bak
                 if (mevcutStok < item.Adet)
                 {
                     throw new Exception($"'{urunAdi}' adlı üründen stokta yeterli yok! \nMevcut: {mevcutStok}, İstenen: {item.Adet}");

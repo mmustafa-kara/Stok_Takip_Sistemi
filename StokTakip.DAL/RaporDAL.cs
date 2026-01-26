@@ -8,7 +8,6 @@ namespace StokTakip.DAL
 {
     public class RaporDAL
     {
-        // 1. Kritik Stok Listesi
         public DataTable KritikStokGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -25,8 +24,6 @@ namespace StokTakip.DAL
                 }
             }
         }
-
-        // 2. Toplam Ciro
         public decimal ToplamCiroGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -43,8 +40,6 @@ namespace StokTakip.DAL
                 }
             }
         }
-
-        // 3. Toplam Kâr
         public decimal ToplamKarGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -63,7 +58,6 @@ namespace StokTakip.DAL
                 }
             }
         }
-        // 4. En Çok Satılan Ürünler Raporu
         public DataTable EnCokSatanlariGetir()
         {
             using (MySqlConnection conn = Baglanti.GetConnection())

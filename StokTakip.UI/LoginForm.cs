@@ -25,10 +25,9 @@ namespace StokTakip.UI
 
                 if (user != null)
                 {
-                    AnaMenuForm anaMenu = new AnaMenuForm(user);
+                    Form1 anaMenu = new Form1(user);
                     anaMenu.Show();
                     this.Hide();
-
                     anaMenu.FormClosed += (s, args) => Application.Exit();
                 }
                 else
@@ -42,5 +41,9 @@ namespace StokTakip.UI
             }
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

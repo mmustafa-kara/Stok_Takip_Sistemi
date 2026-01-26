@@ -108,9 +108,6 @@ namespace StokTakip.DAL
             }
         }
         
-
-
-        // Stok kontrolü için stok adedini çekme
         public int StokAdediGetir(int urunId)
         {
             using (MySqlConnection conn = Baglanti.GetConnection())
@@ -137,6 +134,22 @@ namespace StokTakip.DAL
                 {
                     cmd.Parameters.AddWithValue("@id", urunId);
                     return cmd.ExecuteScalar()?.ToString();
+                }
+            }
+        }
+
+       
+        public void UrununSatislariniTemizle(int urunId)
+        {
+            using (MySqlConnection conn = Baglanti.GetConnection())
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "DELETE FROM satisDetay WHERE urunId = @id";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", urunId);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }

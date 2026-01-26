@@ -53,7 +53,6 @@ namespace StokTakip.UI
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            // Hata yönetimi için try-catch
             try
             {
                 if (dgvMusteriler.CurrentRow != null)
@@ -121,14 +120,10 @@ namespace StokTakip.UI
             try
             {
                 DataGridViewRow row = dgvMusteriler.Rows[e.RowIndex];
-
-                // Null kontrolü yaparak değerleri al
                 lblId.Text = row.Cells["Id"].Value?.ToString();
                 txtAd.Text = row.Cells["Name"].Value?.ToString();
                 txtIletisim.Text = row.Cells["Iletisim"].Value?.ToString();
                 txtAdres.Text = row.Cells["Adres"].Value?.ToString();
-
-                // ComboBox seçimi
                 string tur = row.Cells["Type"].Value?.ToString();
                 if (!string.IsNullOrEmpty(tur))
                 {
@@ -145,9 +140,6 @@ namespace StokTakip.UI
         {
             Listele();
             cmbTur.SelectedIndex = 0;
-
         }
-
- 
     }
 }

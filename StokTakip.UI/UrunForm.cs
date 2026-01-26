@@ -62,22 +62,25 @@ namespace StokTakip.UI
         {
             try
             {
-                int id = Convert.ToInt32(lblId.Text);
-
-                if (id > 0)
+                if (lblId.Text == "0" || string.IsNullOrEmpty(lblId.Text))
                 {
-                    DialogResult cevap = MessageBox.Show("Bu ürünü silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (cevap == DialogResult.Yes)
-                    {
-                        uManager.UrunSil(id);
-                        Listele();
-                        Temizle();
-                    }
+                    MessageBox.Show("Lütfen silinecek ürünü seçiniz.");
+                    return;
                 }
-                else
+
+                int id = Convert.ToInt32(lblId.Text);
+                DialogResult cevap = MessageBox.Show(
+                    "Bu ürünü silerseniz, geçmişte bu ürünle yapılan SATIŞ KAYITLARI DA silinecektir.\n\nRaporlarda tutarsızlık olabilir. Yine de silmek istiyor musunuz?",
+                    "Kritik Silme İşlemi",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (cevap == DialogResult.Yes)
                 {
-                    MessageBox.Show("Lütfen listeden silinecek ürünü seçiniz.");
+                    uManager.UrunSil(id);
+                    MessageBox.Show("Ürün ve geçmiş kayıtları başarıyla silindi.");
+                    Listele();
+                    Temizle();
                 }
             }
             catch (Exception ex)
@@ -141,7 +144,6 @@ namespace StokTakip.UI
             }
             catch (Exception)
             {
-                // Boş veya hatalı bir hücreye tıklanırsa işlem yapma
             }
         }
 
@@ -153,7 +155,7 @@ namespace StokTakip.UI
         private void UrunForm_Load_1(object sender, EventArgs e)
         {
             Listele();
-            
         }
+
     }
 }
