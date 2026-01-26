@@ -30,32 +30,27 @@
 ## 📸 Ekran Görüntüleri
 
 ### Giriş Ekranı
-![Giriş Ekranı](./screenshots/giris.png)
+![Giriş Ekranı](./screenshots/girisSayfa.png)
 
 Kullanıcı adı ve şifre ile sisteme güvenli giriş yapılmasını sağlayan arayüz.
 
-### Ana Menü
-![Ana Menü](./screenshots/anamenu.png)
-
-Tüm modüllere (Ürün, Müşteri, Satış, Raporlar) tek bir noktadan erişim sağlayan dashboard.
-
 ### Ürün Yönetimi
-![Ürün Yönetimi](./screenshots/urunler.png)
+![Ürün Yönetimi](./screenshots/urunSayfa.png)
 
 Stoktaki ürünlerin listelendiği, yeni ürün girişinin yapıldığı ve fiyat/stok güncellemelerinin yönetildiği ekran.
 
 ### Satış İşlemleri
-![Satış İşlemleri](./screenshots/satis.png)
+![Satış İşlemleri](./screenshots/satisSayfa.png)
 
 Müşteri ve ürün seçimi yapılarak sepet oluşturulan ve satışın tamamlandığı ekran. Satış sonrası stoklar otomatik güncellenir.
 
 ### Müşteri Yönetimi
-![Müşteri Yönetimi](./screenshots/musteri.png)
+![Müşteri Yönetimi](./screenshots/musteriSayfa.png)
 
 Müşteri iletişim bilgileri ve müşteri türünün (Toptan/Perakende) yönetildiği ekran.
 
 ### Finansal Raporlar
-![Raporlar](./screenshots/raporlar.png)
+![Raporlar](./screenshots/raporSayfa.png)
 
 İşletmenin kar/zarar durumunu, cirosunu ve kritik stoktaki ürünleri grafiksel ve listeler halinde sunan analiz ekranı.
 
