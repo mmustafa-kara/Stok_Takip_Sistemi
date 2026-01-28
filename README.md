@@ -35,22 +35,22 @@
 Kullanıcı adı ve şifre ile sisteme güvenli giriş yapılmasını sağlayan arayüz.
 
 ### Ürün Yönetimi
-![Ürün Yönetimi](./screenshots/urunSayfa.png)
+![Ürün Yönetimi](./screenshots/urunSayfasi.png)
 
 Stoktaki ürünlerin listelendiği, yeni ürün girişinin yapıldığı ve fiyat/stok güncellemelerinin yönetildiği ekran.
 
 ### Satış İşlemleri
-![Satış İşlemleri](./screenshots/satisSayfa.png)
+![Satış İşlemleri](./screenshots/satisSayfasi.png)
 
 Müşteri ve ürün seçimi yapılarak sepet oluşturulan ve satışın tamamlandığı ekran. Satış sonrası stoklar otomatik güncellenir.
 
 ### Müşteri Yönetimi
-![Müşteri Yönetimi](./screenshots/musteriSayfa.png)
+![Müşteri Yönetimi](./screenshots/musteriSayfasi.png)
 
 Müşteri iletişim bilgileri ve müşteri türünün (Toptan/Perakende) yönetildiği ekran.
 
 ### Finansal Raporlar
-![Raporlar](./screenshots/raporSayfa.png)
+![Raporlar](./screenshots/raporSayfasi.png)
 
 İşletmenin kar/zarar durumunu, cirosunu ve kritik stoktaki ürünleri grafiksel ve listeler halinde sunan analiz ekranı.
 
