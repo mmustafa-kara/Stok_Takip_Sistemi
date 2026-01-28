@@ -40,7 +40,7 @@ Kullanıcı adı ve şifre ile sisteme güvenli giriş yapılmasını sağlayan 
 Stoktaki ürünlerin listelendiği, yeni ürün girişinin yapıldığı ve fiyat/stok güncellemelerinin yönetildiği ekran.
 
 ### Satış İşlemleri
-![Satış İşlemleri](./screenshots/satisSayfasi.png)
+![Satış İşlemleri](./screenshots/satısSayfasi.png)
 
 Müşteri ve ürün seçimi yapılarak sepet oluşturulan ve satışın tamamlandığı ekran. Satış sonrası stoklar otomatik güncellenir.
 
