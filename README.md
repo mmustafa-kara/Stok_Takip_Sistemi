@@ -206,4 +206,4 @@ Proje ile ilgili sorularınız için:
 
 Projeyi detaylı incelemek ve nasıl çalıştığını görmek için aşağıdaki videoya tıklayabilirsiniz:
 
-[![Stok Takip Sistemi Video](https://img.youtube.com/vi/ohMVnVpCdMk/0.jpg)](https://www.youtube.com/watch?v=ohMVnVpCdMk)
+[![Stok Takip Sistemi Video](https://img.youtube.com/vi/laqAXBQCFVo/0.jpg)](https://www.youtube.com/watch?v=laqAXBQCFVo)
