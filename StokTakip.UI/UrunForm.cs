@@ -155,7 +155,9 @@ namespace StokTakip.UI
         private void UrunForm_Load_1(object sender, EventArgs e)
         {
             Listele();
+           
         }
 
+       
     }
 }

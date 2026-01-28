@@ -36,7 +36,9 @@
             this.btnUrunler = new FontAwesome.Sharp.IconButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -161,6 +163,7 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
+            this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(220, 0);
             this.panelHeader.Name = "panelHeader";
@@ -174,6 +177,18 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1042, 613);
             this.panelDesktop.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(770, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(496, 46);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "STOK TAKİP ve SATIŞ SİSTEMİ";
             // 
             // Form1
             // 
@@ -190,6 +205,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.panelMenu.ResumeLayout(false);
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +220,6 @@
         private FontAwesome.Sharp.IconButton btnRaporlar;
         private FontAwesome.Sharp.IconButton btnSatis;
         private FontAwesome.Sharp.IconButton btnMusteriler;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -28,6 +28,7 @@ namespace StokTakip.UI
            
             VerileriYukle();
             SepetGuncelle();
+           
         }
 
         void VerileriYukle()
@@ -116,6 +117,8 @@ namespace StokTakip.UI
             sepet.Clear();
             SepetGuncelle();
         }
+
+     
     }
 
     public class SepetItem
@@ -126,4 +129,6 @@ namespace StokTakip.UI
         public decimal BirimFiyat { get; set; }
         public decimal ToplamTutar { get { return Adet * BirimFiyat; } }
     }
+
+
 }

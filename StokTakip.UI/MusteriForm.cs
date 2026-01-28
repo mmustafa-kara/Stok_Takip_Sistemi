@@ -140,6 +140,9 @@ namespace StokTakip.UI
         {
             Listele();
             cmbTur.SelectedIndex = 0;
+        
         }
+
+        
     }
 }
