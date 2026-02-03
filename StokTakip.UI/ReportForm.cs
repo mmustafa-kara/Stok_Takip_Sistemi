@@ -1,6 +1,8 @@
-﻿using System;
+﻿using StokTakip.BLL;
+using System;
+using System.Data;
 using System.Windows.Forms;
-using StokTakip.BLL;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StokTakip.UI
 {
@@ -19,19 +21,100 @@ namespace StokTakip.UI
             {
                 decimal ciro = rManager.CiroHesapla();
                 decimal kar = rManager.KarHesapla();
-
-                lblCiro.Text = ciro.ToString("C2"); 
+                lblCiro.Text = ciro.ToString("C2");
                 lblKar.Text = kar.ToString("C2");
 
-                dgvKritik.DataSource = rManager.KritikStokListesi();
-                dgvEnCokSatan.DataSource = rManager.EnCokSatanlariGetir();
-                dgvAylikSatis.DataSource = rManager.AylikSatisGetir();
-                dgvMusteriCiro.DataSource = rManager.MusteriCiroGetir();
+                DataTable dtKritik = rManager.KritikStokListesi();
+                DataTable dtEnCokSatan = rManager.EnCokSatanlariGetir();
+                DataTable dtAylikSatis = rManager.AylikSatisGetir();
+                DataTable dtMusteriCiro = rManager.MusteriCiroGetir();
+
+             
+                dgvKritik.DataSource = dtKritik;
+                dgvEnCokSatan.DataSource = dtEnCokSatan;
+                dgvAylikSatis.DataSource = dtAylikSatis;
+                dgvMusteriCiro.DataSource = dtMusteriCiro;
+                if (dtEnCokSatan.Rows.Count > 0)
+                {
+                    GrafikOlustur(
+                        chartEnCokSatan, dtEnCokSatan,
+                        "Ürün Adı", "Toplam Satış Adedi",
+                        "En Çok Satan 5 Ürün",
+                        SeriesChartType.Pie
+                    );
+                }
+                if (dtMusteriCiro.Rows.Count > 0)
+                {
+                    GrafikOlustur(
+                        chartMusteriCiro, dtMusteriCiro,
+                        "Müşteri", "Toplam Alışveriş",
+                        "Müşteri Ciro Dağılımı",
+                        SeriesChartType.Pie
+                    );
+                }
+                if (dtAylikSatis.Rows.Count > 0)
+                {
+                    GrafikOlustur(
+                        chartAylikSatis, dtAylikSatis,
+                        "Dönem", "Toplam Ciro",
+                        "Aylara Göre Satış Trendi",
+                        SeriesChartType.Column
+                    );
+                    if (chartAylikSatis.Series.Count > 0)
+                        chartAylikSatis.Series[0].LabelFormat = "C0";
+                }
+                if (dtKritik.Rows.Count > 0)
+                {
+                    GrafikOlustur(
+                        chartKritikStok, dtKritik,
+                        "Ürün Adı", "Kalan Stok",
+                        "Kritik Seviyedeki Ürünler",
+                        SeriesChartType.Bar
+                    );
+                    chartKritikStok.Palette = ChartColorPalette.Fire;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Raporlar yüklenirken hata: " + ex.Message);
             }
+        }
+
+        private void GrafikOlustur(Chart chart, DataTable dt, string xKolon, string yKolon, string baslik, SeriesChartType tur)
+        {
+            chart.Series.Clear();
+            chart.Titles.Clear();
+            Title title = new Title(baslik);
+            title.Font = new System.Drawing.Font("Segoe UI", 12, System.Drawing.FontStyle.Bold);
+            title.ForeColor = System.Drawing.Color.DimGray;
+            chart.Titles.Add(title);
+            string seriAdi = "Veriler";
+            Series series = new Series(seriAdi);
+            series.ChartType = tur;
+            if (chart.ChartAreas.Count > 0)
+            {
+                series.ChartArea = chart.ChartAreas[0].Name;
+            }
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[xKolon] != DBNull.Value && row[yKolon] != DBNull.Value)
+                {
+                    series.Points.AddXY(row[xKolon], row[yKolon]);
+                }
+            }
+            series.IsValueShownAsLabel = true;
+            series.LabelForeColor = System.Drawing.Color.Black;
+            series.ToolTip = "#VALX: #VALY";
+            if (tur == SeriesChartType.Pie)
+            {
+                series.Label = "#VALX \n(#PERCENT)";
+            }
+            else
+            {
+                series.Label = "#VALY";
+                chart.Legends.Clear(); 
+            }
+            chart.Series.Add(series);
         }
 
         private void btnYenile_Click(object sender, EventArgs e)
@@ -43,93 +126,58 @@ namespace StokTakip.UI
         {
             
             RaporlariGetir();
-
             cmbRaporTuru.Items.Clear();
-
-            // İLK SIRAYA BOŞ SEÇENEK EKLE
             cmbRaporTuru.Items.Add("Rapor Seçiniz...");
-
-            cmbRaporTuru.Items.Add("Genel Bakış (Dashboard)");
             cmbRaporTuru.Items.Add("Kritik Stok Listesi");
             cmbRaporTuru.Items.Add("En Çok Satan Ürünler");
             cmbRaporTuru.Items.Add("Aylık Satış Grafiği");
             cmbRaporTuru.Items.Add("Müşteri Ciro Raporu");
-
-            // Başlangıçta ilk sıradaki "Rapor Seçiniz..." seçili gelsin
             cmbRaporTuru.SelectedIndex = 0;
         }
 
         private void cmbRaporTuru_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // 1. Önce her şeyi eski yerine (Dashboard düzenine) koyuyoruz
             PanelleriSifirla();
 
             if (cmbRaporTuru.SelectedItem == null) return;
             string secim = cmbRaporTuru.SelectedItem.ToString();
-
-            // SENİN İSTEDİĞİN KISIM BURASI:
-            // Eğer "Rapor Seçiniz..." seçiliyse ana tabloyu gizle ve hiçbir şey yapma
             if (secim == "Rapor Seçiniz...")
             {
                 tableLayoutPanel1.Visible = false;
                 return;
             }
 
-            // Eğer Dashboard seçiliyse tabloyu göster (Zaten sıfırladık ve Visible=true yaptık)
-            if (secim == "Genel Bakış (Dashboard)")
-            {
-                tableLayoutPanel1.Visible = true;
-                return;
-            }
-
-            // Tekli seçim yapıldıysa:
-            // 1. Ana tabloyu gizle
             tableLayoutPanel1.Visible = false;
-
-            // 2. Hangi kutuyu tam ekran yapacağımızı bulalım
             GroupBox secilenGrup = null;
 
             if (secim == "Kritik Stok Listesi") secilenGrup = groupBox2;
             else if (secim == "En Çok Satan Ürünler") secilenGrup = groupBox3;
             else if (secim == "Aylık Satış Grafiği") secilenGrup = groupBox4;
             else if (secim == "Müşteri Ciro Raporu") secilenGrup = groupBox5;
-
-            // 3. O kutuyu formun üzerine al ve tam ekran yap
             if (secilenGrup != null)
             {
-                secilenGrup.Parent = this; // Kutuyu tablodan çıkarıp forma al
-                secilenGrup.Dock = DockStyle.Fill; // Kalan boşluğu doldur
-                secilenGrup.BringToFront(); // En öne getir
+                secilenGrup.Parent = this;
+                secilenGrup.Dock = DockStyle.Fill;
+                secilenGrup.BringToFront();
                 secilenGrup.Visible = true;
             }
         }
 
         private void PanelleriSifirla()
         {
-            // TableLayoutPanel'i tekrar görünür yap
             tableLayoutPanel1.Visible = true;
-
-            // Tasarım dosyasındaki orijinal yerleşimlerine göre geri koyuyoruz:
-
-            // Aylık Satış -> (Sütun: 0, Satır: 0)
             groupBox4.Parent = tableLayoutPanel1;
             tableLayoutPanel1.SetCellPosition(groupBox4, new TableLayoutPanelCellPosition(0, 0));
             groupBox4.Dock = DockStyle.Fill;
             groupBox4.Visible = true;
-
-            // En Çok Satan -> (Sütun: 1, Satır: 0)
             groupBox3.Parent = tableLayoutPanel1;
             tableLayoutPanel1.SetCellPosition(groupBox3, new TableLayoutPanelCellPosition(1, 0));
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Visible = true;
-
-            // Kritik Stok -> (Sütun: 0, Satır: 1)
             groupBox2.Parent = tableLayoutPanel1;
             tableLayoutPanel1.SetCellPosition(groupBox2, new TableLayoutPanelCellPosition(0, 1));
             groupBox2.Dock = DockStyle.Fill;
             groupBox2.Visible = true;
-
-            // Müşteri Ciro -> (Sütun: 1, Satır: 1)
             groupBox5.Parent = tableLayoutPanel1;
             tableLayoutPanel1.SetCellPosition(groupBox5, new TableLayoutPanelCellPosition(1, 1));
             groupBox5.Dock = DockStyle.Fill;

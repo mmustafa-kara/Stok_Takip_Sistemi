@@ -89,7 +89,7 @@ namespace StokTakip.UI
 
         private void btnCikis_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Restart();
         }
         private void Buton_MouseEnter(object sender, EventArgs e)
         {
