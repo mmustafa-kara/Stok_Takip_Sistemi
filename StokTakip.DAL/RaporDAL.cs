@@ -13,8 +13,23 @@ namespace StokTakip.DAL
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-                string query = "SELECT name AS 'Ürün Adı', stokAdet AS 'Kalan Stok', minStokUyari AS 'Kritik Eşik' " +
-                               "FROM urunler WHERE stokAdet <= minStokUyari";
+                string query = @"
+            SELECT 
+                u.name AS 'Ürün Adı', 
+                u.stokAdet AS 'Kalan Stok',
+                IFNULL(DATEDIFF(NOW(), MAX(s.satisTarih)), 999) AS 'Geçen Gün',
+                CASE 
+                    WHEN MAX(s.satisTarih) IS NULL THEN 'Hiç Satılmadı'
+                    WHEN DATEDIFF(NOW(), MAX(s.satisTarih)) <= 7 THEN '🔥 ÇOK ACİL'
+                    WHEN DATEDIFF(NOW(), MAX(s.satisTarih)) <= 30 THEN '⚠️ Dikkat'
+                    ELSE '🧊 Atıl Stok'
+                END AS 'Aciliyet Durumu'
+            FROM urunler u 
+            LEFT JOIN satisDetay sd ON u.id = sd.urunId
+            LEFT JOIN satislar s ON sd.satisId = s.id 
+            WHERE u.stokAdet <= u.minStokUyari
+            GROUP BY u.id, u.name, u.stokAdet
+            ORDER BY u.stokAdet ASC";
 
                 using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
                 {
@@ -63,7 +78,9 @@ namespace StokTakip.DAL
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-                string query = @"SELECT u.name AS 'Ürün Adı', SUM(sd.adet) AS 'Toplam Satış Adedi' 
+                string query = @"SELECT u.name AS 'Ürün Adı', 
+                                SUM(sd.adet) AS 'Toplam Satış Adedi',
+                                SUM((sd.fiyat - u.maliyet) * sd.adet) AS 'Toplam Kar'
                          FROM satisDetay sd 
                          JOIN urunler u ON sd.urunId = u.id 
                          GROUP BY u.name 
@@ -84,13 +101,17 @@ namespace StokTakip.DAL
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
-
-                string query = @"SELECT DATE_FORMAT(satisTarih, '%Y-%m') AS 'Dönem', 
-                                COUNT(*) AS 'İşlem Sayısı', 
-                                SUM(toplamTutar) AS 'Toplam Ciro' 
-                         FROM satislar 
-                         GROUP BY DATE_FORMAT(satisTarih, '%Y-%m') 
-                         ORDER BY Dönem DESC";
+                string query = @"
+            SELECT 
+                DATE_FORMAT(s.satisTarih, '%Y-%m') AS 'Dönem', 
+                COUNT(DISTINCT s.id) AS 'İşlem Sayısı', 
+                SUM(sd.fiyat * sd.adet) AS 'Toplam Ciro',
+                SUM((sd.fiyat - u.maliyet) * sd.adet) AS 'Aylık Kar'
+            FROM satislar s 
+            JOIN satisDetay sd ON s.id = sd.satisId
+            JOIN urunler u ON sd.urunId = u.id 
+            GROUP BY DATE_FORMAT(s.satisTarih, '%Y-%m') 
+            ORDER BY Dönem DESC";
 
                 using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
                 {

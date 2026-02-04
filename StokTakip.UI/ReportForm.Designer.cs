@@ -31,38 +31,46 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.dgvKritik = new System.Windows.Forms.DataGridView();
+            this.chartKritikStok = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvEnCokSatan = new System.Windows.Forms.DataGridView();
+            this.chartEnCokSatan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dgvAylikSatis = new System.Windows.Forms.DataGridView();
+            this.chartAylikSatis = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgvMusteriCiro = new System.Windows.Forms.DataGridView();
+            this.chartMusteriCiro = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelUstKartlar = new System.Windows.Forms.Panel();
             this.cmbRaporTuru = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,46 +80,38 @@
             this.lblCiro = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.chartEnCokSatan = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.chartMusteriCiro = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.chartAylikSatis = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.chartKritikStok = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKritik)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEnCokSatan)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAylikSatis)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMusteriCiro)).BeginInit();
-            this.panelUstKartlar.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartEnCokSatan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMusteriCiro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAylikSatis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKritik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartKritikStok)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnCokSatan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEnCokSatan)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAylikSatis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAylikSatis)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMusteriCiro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMusteriCiro)).BeginInit();
+            this.panelUstKartlar.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -125,6 +125,23 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kritik Stok Uyarısı";
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(3, 26);
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.dgvKritik);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.chartKritikStok);
+            this.splitContainer4.Size = new System.Drawing.Size(876, 274);
+            this.splitContainer4.SplitterDistance = 292;
+            this.splitContainer4.TabIndex = 0;
             // 
             // dgvKritik
             // 
@@ -165,6 +182,35 @@
             this.dgvKritik.Size = new System.Drawing.Size(292, 274);
             this.dgvKritik.TabIndex = 0;
             // 
+            // chartKritikStok
+            // 
+            this.chartKritikStok.BackColor = System.Drawing.Color.Transparent;
+            this.chartKritikStok.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chartKritikStok.ChartAreas.Add(chartArea1);
+            this.chartKritikStok.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chartKritikStok.Legends.Add(legend1);
+            this.chartKritikStok.Location = new System.Drawing.Point(0, 0);
+            this.chartKritikStok.Name = "chartKritikStok";
+            this.chartKritikStok.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartKritikStok.Series.Add(series1);
+            this.chartKritikStok.Size = new System.Drawing.Size(580, 274);
+            this.chartKritikStok.TabIndex = 0;
+            this.chartKritikStok.Text = "chart1";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
@@ -190,6 +236,23 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "En Çok Satan";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 26);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvEnCokSatan);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.chartEnCokSatan);
+            this.splitContainer1.Size = new System.Drawing.Size(877, 274);
+            this.splitContainer1.SplitterDistance = 292;
+            this.splitContainer1.TabIndex = 1;
             // 
             // dgvEnCokSatan
             // 
@@ -230,6 +293,39 @@
             this.dgvEnCokSatan.Size = new System.Drawing.Size(292, 274);
             this.dgvEnCokSatan.TabIndex = 0;
             // 
+            // chartEnCokSatan
+            // 
+            this.chartEnCokSatan.BackColor = System.Drawing.Color.Transparent;
+            this.chartEnCokSatan.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.chartEnCokSatan.ChartAreas.Add(chartArea2);
+            this.chartEnCokSatan.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.chartEnCokSatan.Legends.Add(legend2);
+            this.chartEnCokSatan.Location = new System.Drawing.Point(0, 0);
+            this.chartEnCokSatan.Name = "chartEnCokSatan";
+            this.chartEnCokSatan.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series2.ChartArea = "ChartArea1";
+            series2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartEnCokSatan.Series.Add(series2);
+            this.chartEnCokSatan.Size = new System.Drawing.Size(581, 274);
+            this.chartEnCokSatan.TabIndex = 0;
+            this.chartEnCokSatan.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Satılan Ürünler Dağılımı";
+            this.chartEnCokSatan.Titles.Add(title1);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.splitContainer3);
@@ -241,6 +337,23 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Aylık Satış";
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 26);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.dgvAylikSatis);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.chartAylikSatis);
+            this.splitContainer3.Size = new System.Drawing.Size(876, 274);
+            this.splitContainer3.SplitterDistance = 292;
+            this.splitContainer3.TabIndex = 0;
             // 
             // dgvAylikSatis
             // 
@@ -281,6 +394,36 @@
             this.dgvAylikSatis.Size = new System.Drawing.Size(292, 274);
             this.dgvAylikSatis.TabIndex = 0;
             // 
+            // chartAylikSatis
+            // 
+            this.chartAylikSatis.BackColor = System.Drawing.Color.Transparent;
+            this.chartAylikSatis.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartAylikSatis.ChartAreas.Add(chartArea3);
+            this.chartAylikSatis.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Alignment = System.Drawing.StringAlignment.Center;
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend3.Enabled = false;
+            legend3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            this.chartAylikSatis.Legends.Add(legend3);
+            this.chartAylikSatis.Location = new System.Drawing.Point(0, 0);
+            this.chartAylikSatis.Name = "chartAylikSatis";
+            this.chartAylikSatis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series3.ChartArea = "ChartArea1";
+            series3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartAylikSatis.Series.Add(series3);
+            this.chartAylikSatis.Size = new System.Drawing.Size(580, 274);
+            this.chartAylikSatis.TabIndex = 0;
+            this.chartAylikSatis.Text = "chart1";
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.splitContainer2);
@@ -292,6 +435,23 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Müşteri Toplam Satışı";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 26);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dgvMusteriCiro);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.chartMusteriCiro);
+            this.splitContainer2.Size = new System.Drawing.Size(877, 274);
+            this.splitContainer2.SplitterDistance = 292;
+            this.splitContainer2.TabIndex = 0;
             // 
             // dgvMusteriCiro
             // 
@@ -331,6 +491,40 @@
             this.dgvMusteriCiro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMusteriCiro.Size = new System.Drawing.Size(292, 274);
             this.dgvMusteriCiro.TabIndex = 0;
+            // 
+            // chartMusteriCiro
+            // 
+            this.chartMusteriCiro.BackColor = System.Drawing.Color.Transparent;
+            this.chartMusteriCiro.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea4.Area3DStyle.Enable3D = true;
+            chartArea4.BackColor = System.Drawing.Color.Transparent;
+            chartArea4.Name = "ChartArea1";
+            this.chartMusteriCiro.ChartAreas.Add(chartArea4);
+            this.chartMusteriCiro.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Alignment = System.Drawing.StringAlignment.Center;
+            legend4.BackColor = System.Drawing.Color.Transparent;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            this.chartMusteriCiro.Legends.Add(legend4);
+            this.chartMusteriCiro.Location = new System.Drawing.Point(0, 0);
+            this.chartMusteriCiro.Name = "chartMusteriCiro";
+            this.chartMusteriCiro.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartMusteriCiro.Series.Add(series4);
+            this.chartMusteriCiro.Size = new System.Drawing.Size(581, 274);
+            this.chartMusteriCiro.TabIndex = 0;
+            this.chartMusteriCiro.Text = "chart1";
+            title2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Müşterilerin Dağılımı";
+            this.chartMusteriCiro.Titles.Add(title2);
             // 
             // panelUstKartlar
             // 
@@ -444,201 +638,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1777, 618);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 26);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.dgvEnCokSatan);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.chartEnCokSatan);
-            this.splitContainer1.Size = new System.Drawing.Size(877, 274);
-            this.splitContainer1.SplitterDistance = 292;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // chartEnCokSatan
-            // 
-            this.chartEnCokSatan.BackColor = System.Drawing.Color.Transparent;
-            this.chartEnCokSatan.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.Area3DStyle.Enable3D = true;
-            chartArea2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chartEnCokSatan.ChartAreas.Add(chartArea2);
-            this.chartEnCokSatan.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.BackColor = System.Drawing.Color.Transparent;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            this.chartEnCokSatan.Legends.Add(legend2);
-            this.chartEnCokSatan.Location = new System.Drawing.Point(0, 0);
-            this.chartEnCokSatan.Name = "chartEnCokSatan";
-            this.chartEnCokSatan.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartEnCokSatan.Series.Add(series2);
-            this.chartEnCokSatan.Size = new System.Drawing.Size(581, 274);
-            this.chartEnCokSatan.TabIndex = 0;
-            this.chartEnCokSatan.Text = "chart1";
-            title1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Satılan Ürünler Dağılımı";
-            this.chartEnCokSatan.Titles.Add(title1);
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 26);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.dgvMusteriCiro);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.chartMusteriCiro);
-            this.splitContainer2.Size = new System.Drawing.Size(877, 274);
-            this.splitContainer2.SplitterDistance = 292;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // chartMusteriCiro
-            // 
-            this.chartMusteriCiro.BackColor = System.Drawing.Color.Transparent;
-            this.chartMusteriCiro.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea4.Area3DStyle.Enable3D = true;
-            chartArea4.BackColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.chartMusteriCiro.ChartAreas.Add(chartArea4);
-            this.chartMusteriCiro.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Alignment = System.Drawing.StringAlignment.Center;
-            legend4.BackColor = System.Drawing.Color.Transparent;
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            this.chartMusteriCiro.Legends.Add(legend4);
-            this.chartMusteriCiro.Location = new System.Drawing.Point(0, 0);
-            this.chartMusteriCiro.Name = "chartMusteriCiro";
-            this.chartMusteriCiro.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.IsValueShownAsLabel = true;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartMusteriCiro.Series.Add(series4);
-            this.chartMusteriCiro.Size = new System.Drawing.Size(581, 274);
-            this.chartMusteriCiro.TabIndex = 0;
-            this.chartMusteriCiro.Text = "chart1";
-            title2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Müşterilerin Dağılımı";
-            this.chartMusteriCiro.Titles.Add(title2);
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 26);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.dgvAylikSatis);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.chartAylikSatis);
-            this.splitContainer3.Size = new System.Drawing.Size(876, 274);
-            this.splitContainer3.SplitterDistance = 292;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // chartAylikSatis
-            // 
-            this.chartAylikSatis.BackColor = System.Drawing.Color.Transparent;
-            this.chartAylikSatis.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Area3DStyle.Enable3D = true;
-            chartArea3.BackColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.chartAylikSatis.ChartAreas.Add(chartArea3);
-            this.chartAylikSatis.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Alignment = System.Drawing.StringAlignment.Center;
-            legend3.BackColor = System.Drawing.Color.Transparent;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.Enabled = false;
-            legend3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.chartAylikSatis.Legends.Add(legend3);
-            this.chartAylikSatis.Location = new System.Drawing.Point(0, 0);
-            this.chartAylikSatis.Name = "chartAylikSatis";
-            this.chartAylikSatis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.ChartArea = "ChartArea1";
-            series3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartAylikSatis.Series.Add(series3);
-            this.chartAylikSatis.Size = new System.Drawing.Size(580, 274);
-            this.chartAylikSatis.TabIndex = 0;
-            this.chartAylikSatis.Text = "chart1";
-            // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(3, 26);
-            this.splitContainer4.Name = "splitContainer4";
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.dgvKritik);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.chartKritikStok);
-            this.splitContainer4.Size = new System.Drawing.Size(876, 274);
-            this.splitContainer4.SplitterDistance = 292;
-            this.splitContainer4.TabIndex = 0;
-            // 
-            // chartKritikStok
-            // 
-            this.chartKritikStok.BackColor = System.Drawing.Color.Transparent;
-            this.chartKritikStok.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chartKritikStok.ChartAreas.Add(chartArea1);
-            this.chartKritikStok.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            this.chartKritikStok.Legends.Add(legend1);
-            this.chartKritikStok.Location = new System.Drawing.Point(0, 0);
-            this.chartKritikStok.Name = "chartKritikStok";
-            this.chartKritikStok.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartKritikStok.Series.Add(series1);
-            this.chartKritikStok.Size = new System.Drawing.Size(580, 274);
-            this.chartKritikStok.TabIndex = 0;
-            this.chartKritikStok.Text = "chart1";
-            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -651,39 +650,39 @@
             this.Text = "Rapor Sayfası";
             this.Load += new System.EventHandler(this.ReportForm_Load_1);
             this.groupBox2.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKritik)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartKritikStok)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnCokSatan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEnCokSatan)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAylikSatis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAylikSatis)).EndInit();
             this.groupBox5.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusteriCiro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMusteriCiro)).EndInit();
             this.panelUstKartlar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartEnCokSatan)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartMusteriCiro)).EndInit();
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartAylikSatis)).EndInit();
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-            this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartKritikStok)).EndInit();
             this.ResumeLayout(false);
 
         }

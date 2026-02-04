@@ -31,17 +31,35 @@ namespace StokTakip.UI
 
              
                 dgvKritik.DataSource = dtKritik;
+                if (dgvKritik.Columns["Geçen Gün"] != null)
+                {
+                    dgvKritik.Columns["Geçen Gün"].Visible = false;
+                }
                 dgvEnCokSatan.DataSource = dtEnCokSatan;
+                if (dgvEnCokSatan.Columns["Toplam Kar"] != null)
+                {
+                    dgvEnCokSatan.Columns["Toplam Kar"].Visible = false;
+                }
                 dgvAylikSatis.DataSource = dtAylikSatis;
+                if (dgvAylikSatis.Columns["Aylık Kar"] != null)
+                {
+                    dgvAylikSatis.Columns["Aylık Kar"].Visible = false;
+                }
                 dgvMusteriCiro.DataSource = dtMusteriCiro;
                 if (dtEnCokSatan.Rows.Count > 0)
                 {
                     GrafikOlustur(
-                        chartEnCokSatan, dtEnCokSatan,
-                        "Ürün Adı", "Toplam Satış Adedi",
-                        "En Çok Satan 5 Ürün",
-                        SeriesChartType.Pie
+                        chartEnCokSatan,
+                        dtEnCokSatan,
+                        "Ürün Adı",
+                        "Toplam Kar",
+                        "En Çok Satanların Karlılık Durumu",
+                        SeriesChartType.Column
                     );
+                    if (chartEnCokSatan.Series.Count > 0)
+                    {
+                        chartEnCokSatan.Series[0].LabelFormat = "C2";
+                    }
                 }
                 if (dtMusteriCiro.Rows.Count > 0)
                 {
@@ -55,13 +73,15 @@ namespace StokTakip.UI
                 if (dtAylikSatis.Rows.Count > 0)
                 {
                     GrafikOlustur(
-                        chartAylikSatis, dtAylikSatis,
-                        "Dönem", "Toplam Ciro",
-                        "Aylara Göre Satış Trendi",
+                        chartAylikSatis,
+                        dtAylikSatis,
+                        "Dönem",
+                        "Aylık Kar",
+                        "Aylık Net Kar Grafiği",
                         SeriesChartType.Column
                     );
                     if (chartAylikSatis.Series.Count > 0)
-                        chartAylikSatis.Series[0].LabelFormat = "C0";
+                        chartAylikSatis.Series[0].LabelFormat = "C2";
                 }
                 if (dtKritik.Rows.Count > 0)
                 {
