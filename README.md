@@ -50,9 +50,9 @@ Müşteri ve ürün seçimi yapılarak sepet oluşturulan ve satışın tamamlan
 Müşteri iletişim bilgileri ve müşteri türünün (Toptan/Perakende) yönetildiği ekran.
 
 ### Finansal Raporlar
-![Raporlar](./screenshots/raporSayfasi1.png)
-![Raporlar](./screenshots/raporSayfasi2.png)
-![Raporlar](./screenshots/raporSayfasi3.png)
+![Raporlar](./screenshots/kritikStokSayfasi.png)
+![Raporlar](./screenshots/enCokSatilanSayf.png)
+![Raporlar](./screenshots/aylikSatisSayfasi.png)
 ![Raporlar](./screenshots/raporSayfasi4.png)
 
 İşletmenin kar/zarar durumunu, cirosunu ve kritik stoktaki ürünleri grafiksel ve listeler halinde sunan analiz ekranı.
