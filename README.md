@@ -50,9 +50,9 @@ Müşteri ve ürün seçimi yapılarak sepet oluşturulan ve satışın tamamlan
 Müşteri iletişim bilgileri ve müşteri türünün (Toptan/Perakende) yönetildiği ekran.
 
 ### Finansal Raporlar
-![Raporlar](./screenshots/raporSayfasi1.png)
-![Raporlar](./screenshots/raporSayfasi2.png)
-![Raporlar](./screenshots/raporSayfasi3.png)
+![Raporlar](./screenshots/kritikStokSayfasi.png)
+![Raporlar](./screenshots/enCokSatilanSayf.png)
+![Raporlar](./screenshots/aylikSatisSayfasi.png)
 ![Raporlar](./screenshots/raporSayfasi4.png)
 
 İşletmenin kar/zarar durumunu, cirosunu ve kritik stoktaki ürünleri grafiksel ve listeler halinde sunan analiz ekranı.
@@ -209,4 +209,4 @@ Proje ile ilgili sorularınız için:
 
 Projeyi detaylı incelemek ve nasıl çalıştığını görmek için aşağıdaki videoya tıklayabilirsiniz:
 
-[![Stok Takip Sistemi Video](https://img.youtube.com/vi/EJ9UPf6NTIY/0.jpg)](https://www.youtube.com/watch?v=EJ9UPf6NTIY)
+[![Stok Takip Sistemi Video](https://img.youtube.com/vi/fa5xnntsJSI/0.jpg)](https://www.youtube.com/watch?v=fa5xnntsJSI)
