@@ -31,10 +31,6 @@ namespace StokTakip.UI
 
              
                 dgvKritik.DataSource = dtKritik;
-                if (dgvKritik.Columns["Geçen Gün"] != null)
-                {
-                    dgvKritik.Columns["Geçen Gün"].Visible = false;
-                }
                 dgvEnCokSatan.DataSource = dtEnCokSatan;
                 if (dgvEnCokSatan.Columns["Toplam Kar"] != null)
                 {

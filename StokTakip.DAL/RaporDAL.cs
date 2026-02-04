@@ -13,17 +13,28 @@ namespace StokTakip.DAL
             using (MySqlConnection conn = Baglanti.GetConnection())
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
+
+                // TEMİZLENMİŞ SORGU:
+                // 'Geçen Gün' ve 'Son3AySatis' sütunlarını SELECT kısmından sildik.
+                // Ama hesaplama mantığı (CASE içi) aynen duruyor.
                 string query = @"
             SELECT 
                 u.name AS 'Ürün Adı', 
                 u.stokAdet AS 'Kalan Stok',
-                IFNULL(DATEDIFF(NOW(), MAX(s.satisTarih)), 999) AS 'Geçen Gün',
+                
                 CASE 
-                    WHEN MAX(s.satisTarih) IS NULL THEN 'Hiç Satılmadı'
-                    WHEN DATEDIFF(NOW(), MAX(s.satisTarih)) <= 7 THEN '🔥 ÇOK ACİL'
+                    WHEN MAX(s.satisTarih) IS NULL THEN 'Atıl Stok'
+                    
+                    /* Hem hızlı satılıyor (3 ayda >10) hem de yeni satılmışsa -> ACİL */
+                    WHEN DATEDIFF(NOW(), MAX(s.satisTarih)) <= 7 AND SUM(CASE WHEN s.satisTarih >= DATE_SUB(NOW(), INTERVAL 90 DAY) THEN sd.adet ELSE 0 END) > 10 THEN '🔥 ACİL SİPARİŞ'
+                    
+                    /* Yeni satılmış ama yavaş gidiyorsa -> YAVAŞ SEYİR */
+                    WHEN DATEDIFF(NOW(), MAX(s.satisTarih)) <= 7 THEN '🐢 Yavaş Seyir'
+                    
                     WHEN DATEDIFF(NOW(), MAX(s.satisTarih)) <= 30 THEN '⚠️ Dikkat'
-                    ELSE '🧊 Atıl Stok'
+                    ELSE '🧊 Durgun'
                 END AS 'Aciliyet Durumu'
+
             FROM urunler u 
             LEFT JOIN satisDetay sd ON u.id = sd.urunId
             LEFT JOIN satislar s ON sd.satisId = s.id 
