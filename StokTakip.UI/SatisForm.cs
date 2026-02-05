@@ -120,15 +120,4 @@ namespace StokTakip.UI
 
      
     }
-
-    public class SepetItem
-    {
-        public int UrunId { get; set; }
-        public string UrunAdi { get; set; }
-        public int Adet { get; set; }
-        public decimal BirimFiyat { get; set; }
-        public decimal ToplamTutar { get { return Adet * BirimFiyat; } }
-    }
-
-
 }
